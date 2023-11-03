@@ -1,1 +1,6 @@
+# environment variables
 .env
+
+# localhost ssl
+certs/
+
