@@ -2,26 +2,49 @@ html {
     background-color: #56baed;
 }
 
+/* i hate default margins */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 body {
     font-family: "Poppins", sans-serif;
-    height: 100vh;
+}
+
+.navwrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0.5vh;
+    position: sticky !important;
+    top: 0.7vh;
+    left: 0;
+    margin-bottom: -12vh;
+    z-index: 1;
+
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 10vh;
+    height: 5rem;
     background-color: #fff;
     color: #000;
-    position: fixed !important;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1;
+    margin: 0;
+    border-radius: 25px;
+    border: 1px solid #000;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.);
+    padding: 0.2rem;
+    padding-bottom: 0;
 }
 
 .navbar-brand {
@@ -59,4 +82,195 @@ nav {
     color: #fff;
     background-color: #000;
     border-radius: 25px;
+}
+
+header {
+    background: url(./achtung.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    text-align: center;
+    height: 29rem;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 2rem;
+    /* very strong shadow */
+    box-shadow: 0 10px 12px rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+    font-size: 5rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+header h2 {
+    font-size: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 2px;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#copyarea {
+    margin: 0.75rem;
+    padding: 1rem;
+    background: #ffffff55;
+    border-radius: 25px;
+}
+
+#copyarea p {
+    font-size: 1.5rem;
+    color: #fff;
+    letter-spacing: 2px;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+#copyarea hr {
+    margin: 0;
+    padding: 0;
+}
+
+#copyarea button {
+    margin: 0.75rem;
+    margin-bottom: 0;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    background-color: #000;
+    border-radius: 25px;
+    border: 1px solid #000;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease 0s;
+}
+
+#copyarea button:hover {
+    transform: scale(1.1);
+    color: #000;
+    background-color: #aaa;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#copyarea button:active {
+    transform: scale(0.9);
+}
+
+.howto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.howto h3 {
+    font-size: 2rem;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.howto p {
+    font-size: 1rem;
+    color: #000;
+    letter-spacing: 0px;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.howto code {
+    padding: 0.5rem;
+    font-size: 1rem;
+    color: #fff;
+    letter-spacing: 0px;
+    margin: 0;
+    margin-bottom: 0.5rem;
+    background-color: #444;
+    border-radius: 25px;
+}
+
+.features {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+    margin: 0;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.features .feature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+    width: 20rem;
+    height: 20rem;
+    background-color: #fff;
+    border-radius: 25px;
+    border: 1px solid #000;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease 0s;
+}
+
+.features .feature:hover {
+    transform: scale(1.075);
+    border-radius: 25px;
+}
+
+.features .feature h3 {
+    font-size: 1.5rem;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.features .feature p {
+    font-size: 1rem;
+    color: #000;    
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.features .feature a {
+    font-size: 1rem;
+    color: #444;
+    text-decoration: dotted underline;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.features .feature a:hover {
+    color: #000;
+    text-decoration: solid underline;
 }

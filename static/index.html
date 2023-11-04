@@ -19,27 +19,79 @@
         <meta property="og:image:height" content="630">
     </head>
     <body>
+        <script>
+            function copyToClipboard() {
+                var copyText = document.getElementById("copytext").innerHTML;
+                navigator.clipboard.writeText(copyText);
+                var copyButton = document.getElementById("copybutton");
+                copyButton.innerHTML = "Copied!";
+                setTimeout(function() {
+                    copyButton.innerHTML = "Copy";
+                }, 3000);
+            }
+        </script>
         <div class="container">
-            <nav class="navbar">
-                <div class="navbar-brand">
-                    <a class="navbar-item" href="https://formaliser.net">
-                        <img src="formaliser.svg" alt="FORMALISER.NET">
-                    </a>
-                </div>
-                <div class="navbar-menu">
-                    <div class="navbar-end">
-                        <a class="navbar-item" href="https://formaliser.net">Home</a>
-                        <a class="navbar-item" href="https://formaliser.net/contact">Contact</a>
+            <div class="navwrapper">
+                <nav class="navbar">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="https://formaliser.net">
+                            <img src="formaliser.svg" alt="FORMALISER.NET">
+                        </a>
                     </div>
-                </div>
-            </nav>
-            <header class="hero">
-                <div class="hero-body">
-                    <div class="container">
-                        <h1 class="title">FORMALISER.NET</h1>
-                        <h2 class="subtitle">The best backend for your webforms</h2>
+                    <div class="navbar-menu">
+                        <div class="navbar-end">
+                            <a class="navbar-item" href="https://formaliser.net">Home</a>
+                            <a class="navbar-item" href="https://formaliser.net/contact">Contact</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <!--the fitnessgram pacer test is a multistage aerobic capacity test that progressively gets more difficult as it continues. the 20 meter pacer test will begin in 30 seconds. line up at the start. the running speed starts slowly, but gets faster each minute after you hear this signal. [beep] a single lap should be completed each time you hear this sound. [ding] remember to run in a straight line, and run as long as possible. the second time you fail to complete a lap before the sound, your test is over. the test will begin on the word start. on your mark, get ready, start.-->
+            <header>
+                <div class="header-content">
+                    <h1>FORMALISER.NET</h1>
+                    <h2>The best backend for your webforms</h2>
+                    <p>(with zero sign up or configuration required)</p>
+                    <div id="copyarea">
+                        <p id="copytext">https://formaliser.net/send?to=your@emailaddress.com</p>
+                        <hr>
+                        <button id="copybutton" onclick="copyToClipboard()">Copy</button>
                     </div>
                 </div>
             </header>
+            <div class="howto">
+                <h3>Effortless setup</h3>
+                <p>Simply add the URL to your form's action attribute, add your email address to the URL, and you're good to go!</p>
+                <code>&lt;form action="https://formaliser.net/send?to=your@emailaddress.com" method="post"&gt;</code>
+                <p>if your email address was <span class="eg">info@formaliser.net</span>, it would like this:</p>
+                <code>&lt;form action="https://formaliser.net/send?to=info@formaliser.net" method="post"&gt;</code>
+            </div>
+            <!-- <div class="features">
+                <div class="feature">
+                    <h3>No sign up required</h3>
+                    <p>Simply pop the URL into your form's action attribute and you're good to go!</p>
+                </div>
+                <div class="feature">
+                    <h3>Minimal configuration</h3>
+                    <p>Just add your email address to the URL and you're ready to receive submissions!</p>
+                </div>
+                <div class="feature">
+                    <h3>Security and privacy</h3>
+                    <p>Powered by <a target="_blank" href="https://spaceship.com/email">Spacemail</a>, your submissions are encrypted and stored securely.</p>
+                </div>
+                <div class="feature">
+                    <h3>Built-in spam protection</h3>
+                    <p>Rate limiting and hidden honeypot fields help to keep your inbox clean.</p>
+                </div>
+                <div class="feature">
+                    <h3>Reply-to address</h3>
+                    <p>Don't start a new thread, just hit reply; submissions will automatically set the sender's email address as the reply-to address, so you can keep your conversations in one place.</p>
+                </div>
+                <div class="feature">
+                    <h3>FREE and open source</h3>
+                    <p>FORMALISER.NET is completely free to use - in what world must you pay to receive emails? Even better, the source code is available on <a href="https://github.com/mbfrias/formaliser.net">GitHub</a> so you can host your own instance if you want to.</p>
+                </div>
+            </div> -->
         </div>
+    </body>
 </html>

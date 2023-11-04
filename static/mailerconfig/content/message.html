@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" http-equiv="Content-Type" content="text/html">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Form submission powered by FORMALISER.NET</title>
+    <link rel="stylesheet" href="https://formaliser.net/mailerconfig/content/styles.css">
+</head>
+<body>
+    <header class="header">
+        <a href="https://formaliser.net"><img src="https://formaliser.net/formaliser.svg" alt="FORMALISER.NET"></a>
+        <h1>Webform submission</h1>
+    </header>
+    <div class="content">
+        <h3>You've received a message on your webform from <span id="senderemail">${req.body.name}</span></h3>
+        <p>Here's the message:</p>
+        <hr>
+        <h4 class="sender">From ${req.body.name} (${req.body.email})</h4>
+        <h4 class="subject">${req.body.subject}</h4>
+        <p class="message">${req.body.message}</p>
+        <p>Want to reply? Just hit reply in your email client. The sender's email address will be automatically filled in.</p>
+        <hr>
+        <h6>Other fields not automatically parsed by FORMALISER.NET:</h6>
+        <ul>
+            ${fields}
+        </ul>
+        <hr>
+        <p class="footer">Powered by <a href="https://formaliser.net">FORMALISER.NET</a></p>
+</body>
