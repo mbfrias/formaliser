@@ -6,18 +6,18 @@
 
 function validateForm(name, email, subject, message) {
     if (name == "" || email == "" || subject == "" || message == "") {
-        return [false, "Please fill all fields."]
+        return [false, __dirname + '/static/mailerconfig/handlerpages/empty.html'];
     }
     if (name == null || email == null || subject == null || message == null) {
-        return [false, "Please fill all fields."]
+        return [false, __dirname + '/static/mailerconfig/handlerpages/empty.html'];
     }
     if (name == undefined || email == undefined || subject == undefined || message == undefined) {
-        return [false, "Please fill all fields."]
+        return [false, __dirname + '/static/mailerconfig/handlerpages/empty.html'];
     }
     if (!email.includes("@")) {
-        return [false, "Please enter a valid email address."]
+        return [false,  __dirname + '/static/mailerconfig/handlerpages/noemail.html'];
     } else {
-        return [true, "Form validated."]
+        return [true, ""];
     };
 };
 
@@ -66,7 +66,7 @@ app.post('/send', limiter, (req, res) => {
 
     let isValid = validateForm(req.body.name, req.body.email, req.body.subject, req.body.message);
     if (!isValid[0]) {
-        res.status(400).send(isValid[1]);
+        res.status(400).sendFile(isValid[1]);
         return;
     }
 
@@ -88,7 +88,7 @@ app.post('/send', limiter, (req, res) => {
     }
 
     var mailOptions = {
-        from: `FORMALISER.NET Form <noreply.submission@formaliser.net>`,
+        from: `FORMALISER.NET Form <incoming@formaliser.net>`,
         to: `${params.to}`,
         subject: `Message from ${req.body.name}: ${req.body.subject}`,
         replyTo: `${req.body.email}`,
@@ -98,7 +98,56 @@ app.post('/send', limiter, (req, res) => {
             <meta charset="utf-8" http-equiv="Content-Type" content="text/html">
             <meta name="viewport" content="width=device-width, initial-scale=1">
             <title>Form submission powered by FORMALISER.NET</title>
-            <link rel="stylesheet" href="https://formaliser.net/mailerconfig/content/styles.css">
+            <style>
+                body {
+                    font-family: sans-serif;
+                    color: #333;
+                }
+
+                .header {
+                    background-color: #333;
+                    color: #fff;
+                    padding: 1rem;
+                    text-align: center;
+                }
+
+                .header img {
+                    width: 10rem;
+                }
+
+                .content {
+                    padding: 1rem;
+                }
+
+                .sender {
+                    font-weight: bold;
+                }
+
+                .subject {
+                    font-weight: bold;
+                }
+
+                .message {
+                    white-space: pre-wrap;
+                    word-wrap: break-word;
+                    word-break: break-all;
+                }
+
+                .footer {
+                    font-size: 0.8rem;
+                    color: #999;
+                }
+
+                .footer a {
+                    color: #999;
+                    text-decoration: dotted underline;
+                }
+
+                .footer a:hover {
+                    color: #333;
+                    text-decoration: solid underline;
+                }
+            </style>
         </head>
         <body>
             <header class="header">
@@ -112,8 +161,8 @@ app.post('/send', limiter, (req, res) => {
                 <h4 class="sender">From ${req.body.name} (${req.body.email})</h4>
                 <h4 class="subject">${req.body.subject}</h4>
                 <p class="message">${req.body.message}</p>
-                <p>Want to reply? Just hit reply in your email client. The sender's email address will be automatically filled in.</p>
                 <hr>
+                <p>Want to reply? Just hit reply in your email client. The sender's email address will be automatically filled in.</p>
                 <h6>Other fields not automatically parsed by FORMALISER.NET:</h6>
                 <ul>
                     ${fields}
