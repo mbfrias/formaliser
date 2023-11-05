@@ -175,10 +175,10 @@ app.post('/send', limiter, (req, res) => {
     transporter.sendMail(mailOptions, (err, info) => {
         if (err) {
             console.log(err);
-            res.status(500).send("Error sending email.");
+            res.status(500).sendFile(__dirname + '/static/mailerconfig/handlerpages/servererror.html')
         } else {
             console.log(info);
-            res.status(200).send("Email sent successfully.");
+            res.status(200).sendFile(__dirname + '/static/mailerconfig/handlerpages/success.html');
         }
     });
 });

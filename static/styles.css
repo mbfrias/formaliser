@@ -219,10 +219,7 @@ header p {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    padding: 2rem;
     margin: 0;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
 }
 
 .features .feature {
@@ -273,4 +270,128 @@ header p {
 .features .feature a:hover {
     color: #000;
     text-decoration: solid underline;
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact h3 {
+    font-size: 2rem;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.contact p {
+    font-size: 1rem;
+    color: #000;
+    letter-spacing: 0px;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.contact a {
+    font-size: 1rem;
+    color: #444;
+    text-decoration: dotted underline;
+    margin: 0;
+    margin-bottom: 0.5rem;
+}
+
+.contact a:hover {
+    color: #000;
+    text-decoration: solid underline;
+}
+
+.contact form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact form input,textarea,button {
+    font-family: "Poppins", sans-serif;
+    align-self: center;
+}
+
+.contact form input,textarea {
+    width: 35rem;
+    margin: 0.5rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: #000;
+    letter-spacing: 0px;
+    background-color: #fff;
+    border-radius: 25px;
+    border: 1px solid #000;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease 0s;
+}
+
+.contact form input:hover,textarea:hover {
+    transform: scale(1.025);
+    color: #000;
+    background-color: #aaa;
+    border-radius: 25px;
+}
+
+.contact form input:focus,textarea:focus {
+    transform: scale(1.025);
+    color: #000;
+    background-color: #aaa;
+    border-radius: 25px;
+}
+
+.contact form button {
+    margin: 0.75rem;
+    margin-bottom: 0;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    background-color: #000;
+    border-radius: 25px;
+    border: 1px solid #000;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease 0s;
+    width: 35rem;
+}
+
+.contact form button:hover {
+    transform: scale(1.025);
+    color: #000;
+    background-color: #aaa;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.contact form button:active {
+    transform: scale(0.9);
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+    margin: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
