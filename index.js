@@ -40,7 +40,7 @@ if (process.env.HOSTMASTER == "localhost") {
     var redirPort = 80;
     var port = 443;
 } else if (process.env.HOSTMASTER == "digitalocean") {
-    var port = 80;
+    var port = 8080;
 } else if (process.env.HOSTMASTER == null || process.env.HOSTMASTER == undefined) {
     console.log("HOSTMASTER is not defined in environment variables.");
     process.exit(1);
