@@ -1,145 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <link rel="icon" href="favicon.png">
-        <title>FORMALISER.NET</title>
-        <meta name="description" content="FORMALISER.NET - The best backend for your webforms">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-        <meta name="theme-color" content="#fafafa">
-        <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="@t_ub3">
-        <meta name="twitter:creator" content="@t_ub3">
-        <meta name="twitter:title" content="FORMALISER.NET">
-        <meta name="twitter:description" content="The best backend for your webforms">
-        <meta name="twitter:image" content="https://formaliser.net/social.png">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://formaliser.net">
-        <meta property="og:title" content="FORMALISER.NET">
-        <meta property="og:description" content="The best backend for your webforms">
-        <meta property="og:image" content="https://formaliser.net/social.png">
-        <meta property="og:image:width" content="1200">
-        <meta property="og:image:height" content="630">
-        <script src="https://kit.fontawesome.com/3c4e7a03d3.js" crossorigin="anonymous"></script>
-    </head>
-    <body>
-        <script>
-            function copyToClipboard() {
-                var copyText = document.getElementById("copytext").innerHTML;
-                navigator.clipboard.writeText(copyText);
-                var copyButton = document.getElementById("copybutton");
-                copyButton.innerHTML = "Copied!";
-                setTimeout(function() {
-                    copyButton.innerHTML = "Copy";
-                }, 3000);
-            }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Under Construction</title>
+  <style>  
+    body {
+      font-family: 'Arial', sans-serif;
+      height: 100vh;
+      background: linear-gradient(109.6deg, rgb(48, 207, 208) 11.2%, rgb(51, 8, 103) 92.5%);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; 
+    }
 
-            function triggerSpinner() {
-                var sendButton = document.getElementById("sendformbtn");
-                sendButton.innerHTML = "<i class='fas fa-spinner fa-spin-pulse'></i>";
-                setTimeout(function() {
-                    sendButton.innerHTML = "Send";
-                }, 10000);
-            }
-        </script>
-        <div class="container">
-            <div class="navwrapper">
-                <nav class="navbar">
-                    <div class="navbar-brand">
-                        <a class="navbar-item" href="https://formaliser.net">
-                            <img src="formaliser.svg" alt="FORMALISER.NET">
-                        </a>
-                    </div>
-                    <div class="navbar-menu">
-                        <div class="navbar-end">
-                            <a class="navbar-item" href="./#features">Features</a>
-                            <a class="navbar-item" href="./#contact">Contact</a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-            <!--the fitnessgram pacer test is a multistage aerobic capacity test that progressively gets more difficult as it continues. the 20 meter pacer test will begin in 30 seconds. line up at the start. the running speed starts slowly, but gets faster each minute after you hear this signal. [beep] a single lap should be completed each time you hear this sound. [ding] remember to run in a straight line, and run as long as possible. the second time you fail to complete a lap before the sound, your test is over. the test will begin on the word start. on your mark, get ready, start.-->
-            <header>
-                <div class="header-content">
-                    <h1>FORMALISER.NET</h1>
-                    <h2>The best backend for your webforms</h2>
-                    <p>(with zero sign up or configuration required)</p>
-                    <div id="copyarea">
-                        <p id="copytext">https://formaliser.net/send?to=your@emailaddress.com</p>
-                        <hr>
-                        <button id="copybutton" onclick="copyToClipboard()">Copy</button>
-                    </div>
-                </div>
-            </header>
-            <div class="howto">
-                <h3>Effortless setup</h3>
-                <p>Simply add the URL to your form's action attribute, add your email address to the URL, and you're good to go!</p>
-                <code>&lt;form action="https://formaliser.net/send?to=your@emailaddress.com" method="post"&gt;</code>
-                <p>if your email address was <span class="eg">info@formaliser.net</span>, it would like this:</p>
-                <code>&lt;form action="https://formaliser.net/send?to=info@formaliser.net" method="post"&gt;</code>
-            </div>
-            <hr>
-            <div class="features" id="features">
-                <div class="feature">
-                    <h3>No sign up required</h3>
-                    <p>Simply pop the URL into your form's action attribute and you're good to go!</p>
-                </div>
-                <div class="feature">
-                    <h3>Minimal configuration</h3>
-                    <p>Just add your email address to the URL and you're ready to receive submissions!</p>
-                </div>
-                <div class="feature">
-                    <h3>Security and privacy</h3>
-                    <p>Powered by <a target="_blank" href="https://spaceship.com/email">Spacemail</a>, your submissions are encrypted and stored securely.</p>
-                </div>
-                <div class="feature">
-                    <h3>Built-in spam protection</h3>
-                    <p>Rate limiting and hidden honeypot fields help to keep your inbox clean.</p>
-                </div>
-                <div class="feature">
-                    <h3>Reply-to address</h3>
-                    <p>Don't start a new thread, just hit reply; submissions will automatically set the sender's email address as the reply-to address, so you can keep your conversations in one place.</p>
-                </div>
-                <div class="feature">
-                    <h3>FREE and open source</h3>
-                    <p>FORMALISER.NET is completely free to use - in what world must you pay to receive emails? Even better, the source code is available on <a href="https://github.com/mbfrias/formaliser.net">GitHub</a> so you can host your own instance if you want to.</p>
-                </div>
-            </div>
-            <hr>
-            <div class="contact" id="contact">
-                <h3>Get in touch</h3>
-                <p>Have a question? Want to report a bug? Just want to say hi? Send us an email at <a href="mailto:info@formaliser.net">info@formaliser.net</a>.</p>
-                <p>Alternatively, you can use the form below to send us a message. (It's powered by FORMALISER.NET, of course!)</p>
-                <form action="https://formaliser.net/send?to=info@formaliser.net" method="POST">
-                    <div class="field">
-                        <label class="label">Name</label>
-                        <div class="control">
-                            <input class="input" type="text" name="name" placeholder="Dohn Joe">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label class="label">Email</label>
-                        <div class="control">
-                            <input class="input" type="email" name="email" placeholder="your@emailaddress.com">
-                        </div>
-                    </div>
-                    <div class="field">
-                        <label class="label">Message</label>
-                        <div class="control">
-                            <input class="input" type="text" name="subject" placeholder="Subject">
-                        </div>
-                    <div class="field">
-                        <label class="label">Message</label>
-                        <div class="control">
-                            <textarea class="textarea" name="message" placeholder="Your message"></textarea>
-                        </div>
-                    </div>
-                    <div class="field">
-                        <div class="control">
-                            <button id="sendformbtn" onclick="triggerSpinner()" class="button is-link">Send</button>
-                        </div>
-                    </div>
-        </div>
-    </body>
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #fff; /* Orange is the new cool, right? */
+    }
+
+    p {
+      font-size: 1.5em;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+   <h1>Be right back.</h1>
+   <p>FORMALISER.NET will be ready again soon.
+   <br><br>
+   And better than ever.</p>
+</body>
 </html>
